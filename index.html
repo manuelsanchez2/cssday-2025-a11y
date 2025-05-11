@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+    </style>
+    <link rel="stylesheet" href="main.css" />
+    <title>CSS Day</title>
+  </head>
+  <body>
+    <main>
+      <h1>CSS Day 2025</h1>
+
+      <section aria-labelledby="color-contrast">
+        <!-- // Check if this is read twice  -->
+        <hgroup>
+          <h2 id="color-contrast">CSS Background Color Contrast</h2>
+          <p>
+            Following
+            <a href="https://lea.verou.me/blog/2024/contrast-color/"
+              >Lea Verou's approach to emulate the upcoming CSS
+              contrast-colors</a
+            >, we can actually get a compliant foreground/background pairing
+            combination.
+          </p>
+        </hgroup>
+        <div style="--color: oklch(65% 0.15 270)" class="box contrast-text">
+          This text adapts based on background color
+        </div>
+        <div style="--color: oklch(85% 0.1 100)" class="box contrast-text">
+          This text adapts based on background color
+        </div>
+        <div style="--color: oklch(35% 0.12 270)" class="box contrast-text">
+          This text adapts based on background color
+        </div>
+        <div style="--color: oklch(70% 0.08 10)" class="box contrast-text">
+          This text adapts based on background color
+        </div>
+        <div style="--color: oklch(60% 0.18 150)" class="box contrast-text">
+          This text adapts based on background color
+        </div>
+      </section>
+
+      <section aria-label="CSS Debug With Has">
+        <hgroup>
+          <h2>🔍 Debugging with <code>:has()</code></h2>
+          <p>
+            We could prepare a small <code>debug-has.css</code> file that can be
+            used to track some accessibility issues, like having tables without
+            <code>caption</code>, labels without <code>for</code> or
+            <code>button</code> with only an icon and no <code>aria-label</code>
+          </p>
+        </hgroup>
+
+        <div class="check">
+          <h3>❌ Table without caption</h3>
+          <div class="check__inner">
+            <div>
+              <table>
+                <tr>
+                  <td>Data</td>
+                </tr>
+              </table>
+            </div>
+            <div>
+              <table>
+                <caption>
+                  Data summary
+                </caption>
+                <tr>
+                  <td>Data</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="check">
+          <h3>❌ UL with invalid children</h3>
+          <div class="check__inner">
+            <div>
+              <ul>
+                <div>Wrong child</div>
+                <li>Okay</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>One</li>
+                <li>Two</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="check">
+          <h3>❌ Label with no for and input</h3>
+          <div class="check__inner">
+            <div>
+              <label>Email address</label>
+            </div>
+            <div>
+              <label>Email address</label>
+              <input type="email" id="email_no_for" />
+            </div>
+            <div>
+              <label for="email">Email address</label>
+              <input type="email" id="email" />
+            </div>
+          </div>
+        </div>
+
+        <div class="check">
+          <h3>❌ Empty heading</h3>
+          <div class="check__inner">
+            <div>
+              <h3></h3>
+            </div>
+            <div>
+              <h3>Welcome</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="check">
+          <h3>❌ Icon button with no text/aria-label</h3>
+
+          <div class="check__inner">
+            <div>
+              <button>
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-mail-icon lucide-mail"
+                >
+                  <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                </svg>
+              </button>
+            </div>
+            <div>
+              <button aria-label="Close">
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-mail-icon lucide-mail"
+                >
+                  <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Project made with 💙
+        <span class="sr-only">a lot of love</span>
+        by <a href="https://www.manuelsanchezdev.com">Manuel Sánchez</a>.
+      </p>
+    </footer>
+  </body>
+</html>
