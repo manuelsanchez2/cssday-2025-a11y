@@ -1,61 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
-    </style>
-    <link rel="stylesheet" href="main.css" />
-    <title>CSS Day</title>
-  </head>
-  <body>
-    <main>
-      <h1>CSS Day 2025</h1>
 
-      <section aria-labelledby="color-contrast">
-        <!-- // Check if this is read twice  -->
-        <hgroup>
-          <h2 id="color-contrast">CSS Background Color Contrast</h2>
-          <p>
-            Following
-            <a href="https://lea.verou.me/blog/2024/contrast-color/"
-              >Lea Verou's approach to emulate the upcoming CSS
-              contrast-colors</a
-            >, we can actually get a compliant foreground/background pairing
-            combination.
-          </p>
-        </hgroup>
-        <div style="--color: oklch(65% 0.15 270)" class="box contrast-text">
-          This text adapts based on background color
-        </div>
-        <div style="--color: oklch(85% 0.1 100)" class="box contrast-text">
-          This text adapts based on background color
-        </div>
-        <div style="--color: oklch(35% 0.12 270)" class="box contrast-text">
-          This text adapts based on background color
-        </div>
-        <div style="--color: oklch(70% 0.08 10)" class="box contrast-text">
-          This text adapts based on background color
-        </div>
-        <div style="--color: oklch(60% 0.18 150)" class="box contrast-text">
-          This text adapts based on background color
-        </div>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+  </style>
+  <link rel="stylesheet" href="main.css" />
+  <title>CSS Day 2025 - Beyond Borders and Outlines</title>
+  <meta name="description" content="Crafting Inclusive Experiences with Modern CSS: Discover some cool CSS features that can help us create more accessible and inclusive web experiences." />
+  <meta name="keywords" content="CSS, Accessibility, A11y, CSS Day 2025, Inclusive Design" />
+</head>
 
-      <section aria-label="CSS Debug With Has">
-        <hgroup>
-          <h2>🔍 Debugging with <code>:has()</code></h2>
-          <p>
-            We could prepare a small <code>debug-has.css</code> file that can be
-            used to track some accessibility issues, like having tables without
-            <code>caption</code>, labels without <code>for</code> or
-            <code>button</code> with only an icon and no <code>aria-label</code>
-          </p>
-        </hgroup>
+<body>
+  <header style="background-image: url('./cover.webp');" class="header container-shadow">
+    <h1>CSS Day 2025</h1>
+    <h2>Beyond Borders (and Outlines): <br /> Crafting Inclusive Experiences with Modern CSS</h2>
 
+    <div class="header__links">
+      <a class="header__github" title="Open Project in GitHub in a new tab" rel="nofollow noopener" target="_blank" href="https://github.com/manuelsanchez2/cssday-2025-a11y">
+        <svg width="2.5em" height="auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.630322 54.015118">
+          <path d="m 277.71868,13.816573 c -6.8916,0.07951 -15.43129,4.101915 -19.52943,10.049113 -8.19599,11.894397 -7.20434,29.027094 -0.18309,35.321267 5.31151,4.761521 13.87634,10.972456 13.79458,7.754038 0.18839,-0.939774 0.65141,-3.137297 0.71306,-4.337685 0,-1.189038 -0.0272,-0.987452 -1.62058,-1.242299 -2.4757,-0.39579 -4.76673,-1.798955 -5.67743,-4.389596 -1.61052,-4.579514 -2.23837,-4.802849 -3.82958,-5.212397 -3.06281,-0.788353 -5.10301,-2.965159 0.11034,-3.769916 3.13372,-0.342582 6.37354,3.04882 7.92956,4.659709 1.86901,2.450571 3.45069,2.198661 4.23598,1.637798 2.91015,-2.077932 2.31457,-3.473821 0.76332,-3.473821 -4.58338,-0.331364 -10.24387,-4.669922 -10.01289,-10.313088 0,-3.303481 0.70247,-5.971302 2.17699,-7.970043 0.94906,-1.286061 0.60166,-3.986901 0.60166,-6.318991 0,-6.360028 3.91875,-7.386002 8.23145,-0.589121 0.68951,1.086617 0.7747,1.386548 1.57454,1.103815 0.53605,-0.189468 2.7522,-0.432356 4.92443,-0.540015 l 3.94996,-0.195871 1.25571,-1.79316 c 1.50839,-2.154555 3.19114,-3.814842 4.38441,-3.770313 0.1704,0.0064 0.331,0.04765 0.47943,0.127133 1.19433,0.639286 3.00646,5.061531 2.9337,8.389143 -0.0394,1.804882 0.0315,1.569429 0.80407,2.075841 2.53497,1.660711 3.04826,9.358339 1.18983,13.184955 -2.16138,4.450477 -6.65665,5.124371 -8.83523,5.758074 -2.87549,0.836428 -2.09312,1.963076 -1.37875,2.309813 4.02061,1.951408 4.85484,9.24343 5.1316,14.501257 0.054,3.41839 9.29375,-3.890407 12.30868,-10.442972 4.42383,-9.614641 4.8559,-31.463827 -6.8371,-37.766201 -5.84623,-3.151188 -12.69735,-4.825948 -19.58922,-4.746467 z m -17.26433,34.944394 c -0.29739,0.02381 -0.92869,0.173223 -0.97949,0.733848 -0.0521,0.578088 0.42493,0.859737 0.71888,0.911993 0.98134,0.174492 1.32953,-0.623306 1.32953,-0.921571 0,-0.298238 -0.1442,-0.798142 -1.06892,-0.72427 z m 1.93887,0.945171 c 0,0.323876 -0.0402,0.837433 0.50694,1.085453 0.22199,0.100674 1.18639,0.03291 1.34488,-0.511836 0.15822,-0.544724 0.16642,-1.115775 -0.85275,-1.261137 -0.36407,-0.05191 -1.00119,0.364808 -0.99907,0.68752 z m 2.55429,1.238673 c -0.51594,0.489559 -0.10875,1.518074 0.32411,1.765618 0.38497,0.220239 1.23084,0.520832 1.77244,-0.388858 0.49081,-0.824495 -0.0939,-1.456135 -0.97975,-1.706272 -0.31326,-0.08848 -0.92048,0.143352 -1.1168,0.329512 z m 3.49064,2.411016 c -0.25056,-0.02381 -0.98081,0.07427 -1.18506,0.172667 -0.90594,0.436615 -0.58129,1.269392 0.13308,1.747335 1.2282,0.82161 2.21694,0.273447 2.11587,-0.987081 -0.0418,-0.523531 -0.65881,-0.894239 -1.06389,-0.932921 z m 1.54438,3.077342 c -0.22754,0.53975 0.31194,1.073468 0.65458,1.319001 0.28495,0.204126 1.0922,0.429551 1.49278,-0.0032 0.87259,-0.942657 0.45085,-1.78218 -0.25824,-2.093092 -1.25571,-0.550439 -1.76133,0.474477 -1.88912,0.777266 z" fill="white" paint-order="markers stroke fill" transform="translate(-252.38722,-13.813869)"/>
+        </svg>
+      </a>
+
+      <a class="header__github" href="">
+        See Presentation
+      </a>
+    </div>
+  </header>
+  <main>
+    <section aria-label="CSS Debug With Has">
+      <hgroup>
+        <h2>Debugging with CSS</h2>
+        <p>
+          We could prepare a small <code>debug-has.css</code> file that can be
+          used to track some accessibility issues, like having tables without
+          <code>caption</code>, labels without <code>for</code> or
+          <code>button</code> with only an icon and no <code>aria-label</code>
+        </p>
+      </hgroup>
+
+      <details>
+        <summary>Table without caption</summary>
         <div class="check">
-          <h3>❌ Table without caption</h3>
           <div class="check__inner">
             <div>
               <table>
@@ -76,9 +66,11 @@
             </div>
           </div>
         </div>
+      </details>
 
+      <details>
+        <summary>UL/OL with invalid children</summary>
         <div class="check">
-          <h3>❌ UL with invalid children</h3>
           <div class="check__inner">
             <div>
               <ul>
@@ -94,9 +86,11 @@
             </div>
           </div>
         </div>
+      </details>
 
+      <details>
+        <summary>Label with no for and input</summary>
         <div class="check">
-          <h3>❌ Label with no for and input</h3>
           <div class="check__inner">
             <div>
               <label>Email address</label>
@@ -111,9 +105,11 @@
             </div>
           </div>
         </div>
+      </details>
 
+      <details>
+        <summary>Empty heading</summary>
         <div class="check">
-          <h3>❌ Empty heading</h3>
           <div class="check__inner">
             <div>
               <h3></h3>
@@ -123,26 +119,46 @@
             </div>
           </div>
         </div>
+      </details>
 
+      <details>
+        <summary>Interactive element with role="button" or role="link"</summary>
         <div class="check">
-          <h3>❌ Icon button with no text/aria-label</h3>
+          <div class="check__inner">
+            <div>
+              <div class="btn" role="button" tabindex="0" aria-label="Open menu">
+                ☰
+              </div>
+    
+              <span class="btn" role="link" tabindex="0" onclick="window.location='https://example.com'">
+                Go to Example
+              </span>
+  
+            </div>
+  
+            <div>
+              <button class="btn" aria-label="Open menu">
+                ☰
+              </button>
+  
+              <a class="btn" href="https://example.com">
+                Go to Example
+              </a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Icon button with no text/aria-label</summary>
+        <div class="check">
 
           <div class="check__inner">
             <div>
               <button>
-                <svg
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-mail-icon lucide-mail"
-                >
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-mail-icon lucide-mail">
                   <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
                   <rect x="2" y="4" width="20" height="16" rx="2" />
                 </svg>
@@ -150,19 +166,9 @@
             </div>
             <div>
               <button aria-label="Close">
-                <svg
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-mail-icon lucide-mail"
-                >
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-mail-icon lucide-mail">
                   <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
                   <rect x="2" y="4" width="20" height="16" rx="2" />
                 </svg>
@@ -170,15 +176,74 @@
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </details>
 
-    <footer class="site-footer">
-      <p>
-        Project made with 💙
-        <span class="sr-only">a lot of love</span>
-        by <a href="https://www.manuelsanchezdev.com">Manuel Sánchez</a>.
-      </p>
-    </footer>
-  </body>
+    </section>
+
+    <section aria-labelledby="color-contrast">
+      <!-- // Check if this is read twice  -->
+      <hgroup>
+        <h2 id="color-contrast">CSS Background Color Contrast</h2>
+        <p>
+          Following
+          <a href="https://lea.verou.me/blog/2024/contrast-color/">Lea Verou's approach to emulate the upcoming CSS
+            contrast-colors</a>, we can actually get a compliant foreground/background pairing
+          combination.
+        </p>
+      </hgroup>
+
+
+      <details>
+        <summary>Examples of this</summary>
+        <div>
+          <div style="--color: oklch(65% 0.15 270)" class="box contrast-text">
+            This text adapts based on background color
+          </div>
+          <div style="--color: oklch(85% 0.1 100)" class="box contrast-text">
+            This text adapts based on background color
+          </div>
+          <div style="--color: oklch(35% 0.12 270)" class="box contrast-text">
+            This text adapts based on background color
+          </div>
+          <div style="--color: oklch(70% 0.08 10)" class="box contrast-text">
+            This text adapts based on background color
+          </div>
+          <div style="--color: oklch(60% 0.18 150)" class="box contrast-text">
+            This text adapts based on background color
+          </div>
+        </div>
+      </details>
+
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="-top-8 left-1/4 absolute" aria-hidden="true" focusable="false"><path d="M32.9866 1.84953C32.9122 1.36097 32.4922 1 31.998 1C31.5038 1 31.0837 1.36097 31.0094 1.84953L27.1573 27.1573L1.84953 31.0094C1.36097 31.0837 1 31.5038 1 31.998C1 32.4922 1.36097 32.9122 1.84953 32.9866L27.1573 36.8386L31.0094 62.1505C31.0837 62.639 31.5038 63 31.998 63C32.4922 63 32.9122 62.639 32.9866 62.1505L36.8386 36.8386L62.1505 32.9866C62.639 32.9122 63 32.4922 63 31.998C63 31.5038 62.639 31.0837 62.1505 31.0094L36.8386 27.1573L32.9866 1.84953Z" fill="#F8F8F8" stroke="#161616" stroke-width="2" stroke-linejoin="round"></path></svg>
+
+      <h3>How does this work: Steps</h3>
+
+      <details>
+        <summary>Step 1: ...</summary>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis fugiat mollitia amet modi suscipit minima qui temporibus optio magni ipsam ipsum similique dolor in est accusantium at, et iusto? Dolore.
+      </details>
+
+      <details>
+        <summary>Step 2: ...</summary>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis fugiat mollitia amet modi suscipit minima qui temporibus optio magni ipsam ipsum similique dolor in est accusantium at, et iusto? Dolore.
+      </details>
+
+      <details>
+        <summary>Step 3: ...</summary>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis fugiat mollitia amet modi suscipit minima qui temporibus optio magni ipsam ipsum similique dolor in est accusantium at, et iusto? Dolore.
+      </details>
+
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      Project made with 💙
+      <span class="sr-only">a lot of love</span>
+      by <a href="https://www.manuelsanchezdev.com">Manuel Sánchez</a>.
+    </p>
+  </footer>
+</body>
+
 </html>

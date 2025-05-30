@@ -1,0 +1,24 @@
+{
+	"name": "cssday-2025-a11y",
+	"version": "1.0.0",
+	"description": "",
+	"main": "text.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"format": "npx @biomejs/biome format --write "
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/manuelsanchez2/cssday-2025-a11y.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/manuelsanchez2/cssday-2025-a11y/issues"
+	},
+	"homepage": "https://github.com/manuelsanchez2/cssday-2025-a11y#readme",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4"
+	}
+}

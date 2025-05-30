@@ -1,26 +1,26 @@
 table:not(:has(caption))::before {
-  content: '⚠️ Table missing <caption>';
-  color: red;
-  display: block;
-  font-weight: bold;
+	content: "⚠️ Table missing <caption>";
+	color: red;
+	display: block;
+	font-weight: bold;
 }
 
 ul:has(:not(li))::before,
 ol:has(:not(li))::before {
-  content: "⚠️ List has children that aren't <li>";
-  color: darkorange;
-  display: block;
-  font-weight: bold;
+	content: "⚠️ List has children that aren't <li>";
+	color: darkorange;
+	display: block;
+	font-weight: bold;
 }
 
 label:not([for]):not(:has(input, select, textarea))::after {
-  content: " ⚠️ Label missing 'for' or control";
-  color: crimson;
-  font-weight: bold;
+	content: " ⚠️ Label missing 'for' or control";
+	color: crimson;
+	font-weight: bold;
 }
 
 label:not([for]):not(:has(input, select, textarea)) {
-  border: 2px dashed red;
+	border: 2px dashed red;
 }
 
 h1:empty,
@@ -29,7 +29,7 @@ h3:empty,
 h4:empty,
 h5:empty,
 h6:empty {
-  outline: 2px solid red;
+	outline: 2px solid red;
 }
 
 h1:empty::before,
@@ -38,15 +38,15 @@ h3:empty::before,
 h4:empty::before,
 h5:empty::before,
 h6:empty::before {
-  content: '⚠️ Empty heading';
-  color: crimson;
-  font-weight: bold;
+	content: "⚠️ Empty heading";
+	color: crimson;
+	font-weight: bold;
 }
 
 button:has(svg):not(:has(span)):not([aria-label])::after {
-  content: ' ⚠️ Icon-only button needs a label';
-  color: crimson;
-  font-weight: bold;
+	content: " ⚠️ Icon-only button needs a label";
+	color: crimson;
+	font-weight: bold;
 }
 /* Optional: all flagged blocks */
 table:not(:has(caption)),
@@ -54,5 +54,21 @@ ul:has(:not(li)),
 ol:has(:not(li)),
 label:not([for]):not(:has(input, select, textarea)),
 button:has(svg):not(:has(span)):not([aria-label]) {
-  border: 2px solid red;
+	border: 2px solid red;
+}
+
+/* Elements with role="button" or role="link" that are not inherently interactive and lack keyboard accessibility */
+[role="button"],
+[role="link"] {
+	outline: 2px dashed darkorange;
+	position: relative;
+}
+
+[role="button"]::after,
+[role="link"]::after {
+	content: "⚠️ Role needs keyboard support";
+	color: darkorange;
+	font-weight: bold;
+	display: block;
+	margin-top: 0.25em;
 }

@@ -1,44 +1,44 @@
 :root {
-  /* purplish - black */
-  /* --color: oklch(65% 0.15 270); */
+	/* purplish - black */
+	/* --color: oklch(65% 0.15 270); */
 
-  /* lightish yellow - black */
-  /* --color: oklch(85% 0.1 100); */
+	/* lightish yellow - black */
+	/* --color: oklch(85% 0.1 100); */
 
-  /* darkish purple - white */
-  /* --color: oklch(35% 0.12 270); */
+	/* darkish purple - white */
+	/* --color: oklch(35% 0.12 270); */
 
-  /* lightish pink - close to the threshold - black */
-  /* --color: oklch(70% 0.08 10); */
+	/* lightish pink - close to the threshold - black */
+	/* --color: oklch(70% 0.08 10); */
 
-  /* lightish green - white */
-  /* --color: oklch(60% 0.18 150);  */
+	/* lightish green - white */
+	/* --color: oklch(60% 0.18 150);  */
 
-  --l-threshold: 0.623;
+	--l-threshold: 0.623;
 }
 
 .box {
-  padding: 2rem;
-  font-size: 1.5rem;
-  font-family: sans-serif;
-  background: var(--color);
-  transition: background 0.3s;
-  margin-block: 1rem;
-  border: 1px solid black;
+	padding: 2rem;
+	font-size: 1.5rem;
+	font-family: sans-serif;
+	background: var(--color);
+	transition: background 0.3s;
+	margin-block: 1rem;
+	border: 1px solid black;
 }
 
 .contrast-text {
-  /* Fallback */
-  color: white;
-  text-shadow: 0 0 0.05em black, 0 0 0.05em black;
+	/* Fallback */
+	color: white;
+	text-shadow: 0 0 0.05em black, 0 0 0.05em black;
 
-  @supports (color: oklch(from red l c h)) {
-    --l: clamp(0, (l / var(--l-threshold) - 1) * -100000, 1);
-    color: oklch(from var(--color) var(--l) 0 h);
-    text-shadow: none;
-  }
+	@supports (color: oklch(from red l c h)) {
+		--l: clamp(0, (l / var(--l-threshold) - 1) * -100000, 1);
+		color: oklch(from var(--color) var(--l) 0 h);
+		text-shadow: none;
+	}
 
-  @supports (color: contrast-color(red)) {
-    color: contrast-color(var(--color));
-  }
+	@supports (color: contrast-color(red)) {
+		color: contrast-color(var(--color));
+	}
 }

@@ -1,0 +1,10 @@
+:root {
+	--color-dark: #121212;
+	--color-dark-rgb: 18, 18, 18;
+	--color-light: #ffffff;
+
+	--box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.7), inset 0 0 0 2px
+		rgba(255, 255, 255, 0.4);
+	--text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7);
+	--font-family: "Atkinson Hyperlegible Next", sans-serif;
+}
