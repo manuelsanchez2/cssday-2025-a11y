@@ -5,32 +5,8 @@
 @import "./styles/footer.css";
 
 /* Specific Talk  */
-@import "./styles/contrast-bg.css";
-@import "./styles/debug-has.css";
-
-.check {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	margin-block: 3rem;
-	align-items: flex-start;
-}
-
-.check__inner {
-	display: flex;
-	gap: 2rem;
-	width: 100%;
-}
-
-.check__inner > div {
-	flex: 1;
-	padding: 1rem;
-	border: 1px solid black;
-}
-
-.check h3 {
-	margin-top: 0;
-}
+@import "./styles/contrast.css";
+@import "./styles/debug.css";
 
 .container-shadow {
 	border: 2px solid black;
