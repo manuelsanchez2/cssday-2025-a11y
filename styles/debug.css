@@ -1,168 +1,170 @@
 /* This CSS file is for debugging purposes only. */
 
-/* 1. Elements with role="button" or role="link" that are not inherently interactive and lack keyboard accessibility */
-[role="button"],
-[role="link"] {
-	outline: 2px dashed var(--color-debug-warning);
-	outline-offset: 4px;
-	position: relative;
-}
-
-[role="button"]::after,
-[role="link"]::after {
-	content: "⚠️ Role needs keyboard support";
-	color: var(--color-debug-warning);
-	font-size: 0.675rem;
-	font-weight: bold;
-	display: block;
-	margin-top: 0.25em;
-	border: 1px solid var(--color-dark);
-	background-color: var(--color-light);
-	padding: 0.25em 0.75em;
-	border-radius: 1.25em;
-}
-
-/* 2. Tables without a <caption> */
-table:not(:has(caption)) {
-	outline: 2px dashed var(--color-debug-error);
-	outline-offset: 4px;
-	position: relative;
-	width: 100%;
-}
-
-table:not(:has(caption))::after {
-	content: "❌ Table missing <caption>";
-	color: var(--color-dark);
-	font-size: 0.675rem;
-	font-weight: bold;
-	display: block;
-	margin-block: 0.25em;
-	background-color: var(--color-debug-light-error);
-	border: 1px solid var(--color-dark);
-	padding: 0.25em 0.75em;
-	border-radius: 1.25em;
-	width: fit-content;
-}
-
-/* 3. Lists with children that aren't <li> */
-ul:has(> :not(li)),
-ol:has(> :not(li)) {
-	outline: 2px dashed var(--color-debug-warning);
-	outline-offset: 4px;
-	position: relative;
-}
-
-ul:has(> :not(li))::before,
-ol:has(> :not(li))::before {
-	content: "⚠️ List has children that aren't <li>";
-	color: var(--color-debug-warning);
-	font-size: 0.675rem;
-	font-weight: bold;
-	display: block;
-	margin-top: 0.25em;
-	border: 1px solid var(--color-dark);
-	background-color: var(--color-light);
-	padding: 0.25em 0.75em;
-	border-radius: 1.25em;
-	width: fit-content;
-}
-
-/* 4. Empty headings */
-h1:empty,
-h2:empty,
-h3:empty,
-h4:empty,
-h5:empty,
-h6:empty {
-	outline: 2px solid var(--color-debug-error);
-	outline-offset: 4px;
-	position: relative;
-}
-
-h1:empty::before,
-h2:empty::before,
-h3:empty::before,
-h4:empty::before,
-h5:empty::before,
-h6:empty::before {
-	content: "⚠️ Empty heading";
-	color: var(--color-debug-warning);
-	font-size: 0.675rem;
-	font-weight: bold;
-	display: block;
-	margin-top: 0.25em;
-	border: 1px solid var(--color-dark);
-	background-color: var(--color-light);
-	padding: 0.25em 0.75em;
-	border-radius: 1.25em;
-	width: fit-content;
-}
-
-/* 5. Image not alt tag */
-*:has(> img:not([alt])) {
-	outline: 2px dashed var(--color-debug-error);
-	outline-offset: 4px;
-	position: relative;
-}
-
-*:has(> img:not([alt]))::after {
-	content: "❌ Image missing alt text";
-	color: var(--color-dark);
-	font-size: 0.675rem;
-	font-weight: bold;
-	display: block;
-	margin-top: 0.25em;
-	background-color: var(--color-debug-light-error);
-	border: 1px solid var(--color-dark);
-	padding: 0.25em 0.75em;
-	border-radius: 1.25em;
-	width: fit-content;
-}
-
-/* 6. Labels without 'for' attribute or associated control */
-label:not([for]):not(:has(input, select, textarea)),
-label[for] + input:not([id]),
-label[for] + select:not([id]),
-label[for] + textarea:not([id]) {
-	outline: 2px dashed var(--color-debug-error);
-	outline-offset: 4px;
-	position: relative;
-}
-
-label:not([for]):not(:has(input, select, textarea))::before,
-label[for] + input:not([id])::before,
-label[for] + select:not([id])::before,
-label[for] + textarea:not([id])::before {
-	content: " ⚠️ Label missing 'for' or control";
-	color: var(--color-debug-error);
-	font-size: 0.675rem;
-	font-weight: bold;
-	display: block;
-	margin-top: 0.25em;
-	background-color: var(--color-debug-light-error);
-	border: 1px solid var(--color-dark);
-	padding: 0.25em 0.75em;
-	border-radius: 1.25em;
-	width: fit-content;
-}
-
-/* 7. Buttons with SVG icons but no text or aria-label */
-button:has(svg):not(:has(span)):not([aria-label]) {
-	outline: 2px dashed var(--color-debug-warning);
-	outline-offset: 4px;
-	position: relative;
-}
-
-button:has(svg):not(:has(span)):not([aria-label])::after {
-	content: "⚠️ Icon-only button needs a label";
-	color: var(--color-debug-error);
-	font-size: 0.675rem;
-	font-weight: bold;
-	display: block;
-	margin-top: 0.25em;
-	background-color: var(--color-debug-light-error);
-	border: 1px solid var(--color-dark);
-	padding: 0.25em 0.75em;
-	border-radius: 1.25em;
-	width: fit-content;
+.debug-a11y {
+	/* 1. Elements with role="button" or role="link" that are not inherently interactive and lack keyboard accessibility */
+	[role="button"],
+	[role="link"] {
+		outline: 2px dashed var(--color-debug-warning);
+		outline-offset: 4px;
+		position: relative;
+	}
+	
+	[role="button"]::after,
+	[role="link"]::after {
+		content: "⚠️ Role needs keyboard support";
+		color: var(--color-debug-warning);
+		font-size: 0.675rem;
+		font-weight: bold;
+		display: block;
+		margin-top: 0.25em;
+		border: 1px solid var(--color-dark);
+		background-color: var(--color-light);
+		padding: 0.25em 0.75em;
+		border-radius: 1.25em;
+	}
+	
+	/* 2. Tables without a <caption> */
+	table:not(:has(caption)) {
+		outline: 2px dashed var(--color-debug-error);
+		outline-offset: 4px;
+		position: relative;
+		width: 100%;
+	}
+	
+	table:not(:has(caption))::after {
+		content: "❌ Table missing <caption>";
+		color: var(--color-dark);
+		font-size: 0.675rem;
+		font-weight: bold;
+		display: block;
+		margin-block: 0.25em;
+		background-color: var(--color-debug-light-error);
+		border: 1px solid var(--color-dark);
+		padding: 0.25em 0.75em;
+		border-radius: 1.25em;
+		width: fit-content;
+	}
+	
+	/* 3. Lists with children that aren't <li> */
+	ul:has(> :not(li)),
+	ol:has(> :not(li)) {
+		outline: 2px dashed var(--color-debug-warning);
+		outline-offset: 4px;
+		position: relative;
+	}
+	
+	ul:has(> :not(li))::before,
+	ol:has(> :not(li))::before {
+		content: "⚠️ List has children that aren't <li>";
+		color: var(--color-debug-warning);
+		font-size: 0.675rem;
+		font-weight: bold;
+		display: block;
+		margin-top: 0.25em;
+		border: 1px solid var(--color-dark);
+		background-color: var(--color-light);
+		padding: 0.25em 0.75em;
+		border-radius: 1.25em;
+		width: fit-content;
+	}
+	
+	/* 4. Empty headings */
+	h1:empty,
+	h2:empty,
+	h3:empty,
+	h4:empty,
+	h5:empty,
+	h6:empty {
+		outline: 2px solid var(--color-debug-error);
+		outline-offset: 4px;
+		position: relative;
+	}
+	
+	h1:empty::before,
+	h2:empty::before,
+	h3:empty::before,
+	h4:empty::before,
+	h5:empty::before,
+	h6:empty::before {
+		content: "⚠️ Empty heading";
+		color: var(--color-debug-warning);
+		font-size: 0.675rem;
+		font-weight: bold;
+		display: block;
+		margin-top: 0.25em;
+		border: 1px solid var(--color-dark);
+		background-color: var(--color-light);
+		padding: 0.25em 0.75em;
+		border-radius: 1.25em;
+		width: fit-content;
+	}
+	
+	/* 5. Image not alt tag */
+	*:has(> img:not([alt])) {
+		outline: 2px dashed var(--color-debug-error);
+		outline-offset: 4px;
+		position: relative;
+	}
+	
+	*:has(> img:not([alt]))::after {
+		content: "❌ Image missing alt text";
+		color: var(--color-dark);
+		font-size: 0.675rem;
+		font-weight: bold;
+		display: block;
+		margin-top: 0.25em;
+		background-color: var(--color-debug-light-error);
+		border: 1px solid var(--color-dark);
+		padding: 0.25em 0.75em;
+		border-radius: 1.25em;
+		width: fit-content;
+	}
+	
+	/* 6. Labels without 'for' attribute or associated control */
+	label:not([for]):not(:has(input, select, textarea)),
+	label[for] + input:not([id]),
+	label[for] + select:not([id]),
+	label[for] + textarea:not([id]) {
+		outline: 2px dashed var(--color-debug-error);
+		outline-offset: 4px;
+		position: relative;
+	}
+	
+	label:not([for]):not(:has(input, select, textarea))::before,
+	label[for] + input:not([id])::before,
+	label[for] + select:not([id])::before,
+	label[for] + textarea:not([id])::before {
+		content: " ⚠️ Label missing 'for' or control";
+		color: var(--color-debug-error);
+		font-size: 0.675rem;
+		font-weight: bold;
+		display: block;
+		margin-top: 0.25em;
+		background-color: var(--color-debug-light-error);
+		border: 1px solid var(--color-dark);
+		padding: 0.25em 0.75em;
+		border-radius: 1.25em;
+		width: fit-content;
+	}
+	
+	/* 7. Buttons with SVG icons but no text or aria-label */
+	button:has(svg):not(:has(span)):not([aria-label]) {
+		outline: 2px dashed var(--color-debug-warning);
+		outline-offset: 4px;
+		position: relative;
+	}
+	
+	button:has(svg):not(:has(span)):not([aria-label])::after {
+		content: "⚠️ Icon-only button needs a label";
+		color: var(--color-debug-error);
+		font-size: 0.675rem;
+		font-weight: bold;
+		display: block;
+		margin-top: 0.25em;
+		background-color: var(--color-debug-light-error);
+		border: 1px solid var(--color-dark);
+		padding: 0.25em 0.75em;
+		border-radius: 1.25em;
+		width: fit-content;
+	}
 }

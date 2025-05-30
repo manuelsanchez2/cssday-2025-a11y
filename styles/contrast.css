@@ -19,7 +19,7 @@
 
 .box {
 	padding: 2rem;
-	font-size: 1.5rem;
+	font-size: 0.865rem;
 	font-family: sans-serif;
 	background: var(--color);
 	transition: background 0.3s;
@@ -41,4 +41,31 @@
 	@supports (color: contrast-color(red)) {
 		color: contrast-color(var(--color));
 	}
+}
+
+.outline-contrast {
+  outline: 3px solid transparent;
+  outline-offset: 2px;
+  transition: outline-color 0.2s ease;
+}
+
+/* Default fallback for focus */
+.outline-contrast:focus {
+  outline-color: black;
+}
+
+/* RCS support */
+@supports (outline-color: oklch(from red l c h)) {
+  .outline-contrast:focus {
+    --l: clamp(0, (l / var(--l-threshold, 0.623) - 1) * -100000, 1);
+    --inverse-l: calc(1 - var(--l));
+    outline-color: oklch(from var(--color) var(--inverse-l) 0 h);
+  }
+}
+
+/* Future support for contrast-color() */
+@supports (outline-color: contrast-color(red)) {
+  .outline-contrast:focus {
+    outline-color: contrast-color(var(--color) max);
+  }
 }
