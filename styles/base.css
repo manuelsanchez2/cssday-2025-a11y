@@ -10,15 +10,16 @@ body {
 	font-family: var(--font-family);
 	font-size: 1.125rem;
 	line-height: 1.5;
-	width: min(100%, 1024px);
-	max-width: 100%;
-	margin-inline: auto;
 	padding: 0 1rem;
 }
 
-main {
+main,
+header {
 	display: flex;
 	flex-direction: column;
+	width: min(100%, 1024px);
+	max-width: 100%;
+	margin-inline: auto;
 }
 
 main h2 {
@@ -30,7 +31,7 @@ main h2 {
 }
 
 section {
-	padding: 2rem;
+	padding-block: 2rem;
 }
 
 p {

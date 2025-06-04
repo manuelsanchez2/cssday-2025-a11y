@@ -79,17 +79,17 @@
         </svg>
       </a>
 
-      <a class="header__github" href="">
-        See Presentation
+      <a class="header__github" target="_blank" download href="./CSSDay-Accessibility-2025.pdf">
+        Download Presentation
       </a>
     </div>
 
 
   </header>
   <main>
-    <section aria-label="CSS Debug With Has">
+    <section aria-labelledby="debug-css">
       <hgroup>
-        <h2 class="container-shadow">Debugging with CSS</h2>
+        <h2 id="debug-css" class="container-shadow">Debugging with CSS</h2>
         <p>
           We could prepare a small <code>debug.css</code> file that can be
           used to track some accessibility issues, like having tables without
@@ -746,7 +746,7 @@ button:has(svg):not(:has(span)):not([aria-label])::after {
       </details>
 
       <details>
-        <summary>Step 3: We do some math with clamp() and add fallback support</summary>
+        <summary>Step 3: We determine the text color with clamp() and add fallback support</summary>
 
         <div>
           <p>
