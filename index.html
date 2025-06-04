@@ -561,8 +561,7 @@ button:has(svg):not(:has(span)):not([aria-label])::after {
           <div style="margin-bottom: 1rem;">
             <button class="btn">
               <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-mail-icon lucide-mail">
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
                 <rect x="2" y="4" width="20" height="16" rx="2" />
               </svg>
@@ -577,12 +576,34 @@ button:has(svg):not(:has(span)):not([aria-label])::after {
           <div>
             <button class="btn" aria-label="Send Message">
               <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-mail-icon lucide-mail">
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
                 <rect x="2" y="4" width="20" height="16" rx="2" />
               </svg>
             </button>
+            
+          </div>
+
+          <div>
+            <button class="btn">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+              </svg>
+              Send Message
+            </button>
+
+            <button class="btn">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+              </svg>
+              <span>Send Message</span>
+        
+            </button>
+            
           </div>
 
 
@@ -643,16 +664,22 @@ button:has(svg):not(:has(span)):not([aria-label])::after {
         <div>
           <div class="flex">
             <div>
-              <div style="--color: oklch(65% 0.15 270)" class="box contrast-text">
-                <button class="btn dynamic-outline contrast-text outline-contrast">Click me</button>
+              <div style="--color: oklch(65% 0.15 270)" class="box">
+                <button class="btn outline-contrast">Click me</button>
               </div>
-              <div style="--color: oklch(70% 0.08 10)" class="box contrast-text">
-                <button class="btn dynamic-outline contrast-text outline-contrast">Click me</button>
+              <div style="--color: oklch(85% 0.1 100)" class="box">
+                <button class="btn outline-contrast">Click me</button>
+              </div>
+              <div style="--color: oklch(70% 0.08 10)" class="box">
+                <button class="btn outline-contrast">Click me</button>
               </div>
             </div>
             <div>
-              <div style="--color: oklch(60% 0.18 150)" class="box contrast-text">
-                <button class="btn dynamic-outline contrast-text outline-contrast">Click me</button>
+              <div style="--color: oklch(35% 0.12 270)" class="box">
+                <button class="btn outline-contrast">Click me</button>
+              </div>
+              <div style="--color: oklch(60% 0.18 150)" class="box">
+                <button class="btn outline-contrast">Click me</button>
               </div>
             </div>
           </div>
@@ -665,10 +692,9 @@ button:has(svg):not(:has(span)):not([aria-label])::after {
         <summary>Step 1: Choose a color to start with!</summary>
         <div>
           <p>
-
             The resulting text color is determined by the background color, which is set using the <code>--color</code>
             CSS variable. The text color is calculated to ensure a contrast ratio of at least 4.5:1 with the background
-            color (CHECK THIS).
+            color.
           </p>
 
           <p>Let's say we are selecting the following color:</p>
@@ -730,8 +756,8 @@ button:has(svg):not(:has(span)):not([aria-label])::after {
             color.
           </p>
 
-          <p>In this case, if the background is darker than the threshold, we use will get 1 as output (meaning white
-            text),otherwise, we will get 0 and therefore black text.</p>
+          <p>In this case, if the background is darker than the threshold, we will get 1 as output (meaning white
+            text), otherwise, we will get 0 and therefore black text.</p>
 
           <pre>
 <code class="language-css">.contrast-text {
