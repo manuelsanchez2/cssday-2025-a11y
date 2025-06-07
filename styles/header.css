@@ -39,8 +39,10 @@
 
 .header__links {
 	display: flex;
+	align-items: center;
 	gap: 2rem;
 	margin-top: 1rem;
+	color: var(--color-light);
 }
 
 .header__github {
@@ -49,10 +51,20 @@
 	justify-content: center;
 	align-items: center;
 	gap: 0.5rem;
-	margin-top: 1rem;
-	color: var(--color-light);
+}
+
+.header__github::after {
+	display: none;
 }
 
 .header__github:hover {
 	opacity: 0.8;
+}
+
+.header__download {
+	color: var(--color-light);
+}
+
+.header__download::after {
+	background-color: var(--color-light);
 }

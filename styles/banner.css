@@ -1,0 +1,18 @@
+.banner {
+    background-color: var(--banner-background-color);
+    color: var(--banner-text-color);
+    padding: 1rem 0.5rem;
+    text-align: center;
+    border-radius: 8px;
+    display: inline-flex;
+    margin-inline: auto;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+
+    & a {
+        color: var(--color-dark);
+    }
+
+}

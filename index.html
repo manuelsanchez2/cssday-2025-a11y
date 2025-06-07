@@ -19,6 +19,17 @@
 </head>
 
 <body class="debug-a11y">
+  <div class="banner">
+    <a 
+    title="Open the CSS-only a11y-debug library in a new tab"
+    class="hover:underline focus:underline font-bold" href="https://github.com/manuelsanchez2/a11y-debug-stylesheet">
+      <strong>NEWS</strong>: Check out the CSS-only a11y-debug library!
+      <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" viewBox="0 0 16 16" aria-hidden="true">
+      <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M5.75001 2H5.00001V3.5H5.75001H11.4393L2.21968 12.7197L1.68935 13.25L2.75001 14.3107L3.28034 13.7803L12.4988 4.56182V10.25V11H13.9988V10.25V3C13.9988 2.44772 13.5511 2 12.9988 2H5.75001Z"></path>
+    </svg>
+    </a>
+  </div>
+
   <header class="header container-shadow">
 
     <!-- backdrop -->
@@ -79,7 +90,7 @@
         </svg>
       </a>
 
-      <a class="header__github" target="_blank" download href="./CSSDay-Accessibility-2025.pdf">
+      <a class="header__download" target="_blank" download href="./CSSDay-Accessibility-2025.pdf">
         Download Presentation
       </a>
     </div>
@@ -148,7 +159,7 @@
 
           <p>This way we could debug these occurrences like this:</p>
 
-          <div class="flex justify-center" style="margin-bottom: 1rem;">
+          <div class="flex justify-center items-center" style="margin-bottom: 1rem;">
             <div class="btn" role="button" tabindex="0" aria-label="Open menu">
               ☰
             </div>
@@ -170,7 +181,7 @@
 
         </div>
 
-        <div class="flex justify-center" style="margin-bottom: 1rem;">
+        <div class="flex justify-center items-center" style="margin-bottom: 1rem;">
           <button class="btn" aria-label="Open menu">
             ☰
           </button>
@@ -219,23 +230,25 @@ table:not(:has(caption))::after {
 	width: fit-content;
 }</code></pre>
 
-          <table>
-            <tr>
-              <th>Company</th>
-              <th>Contact</th>
-              <th>Country</th>
-            </tr>
-            <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-            </tr>
-            <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-            </tr>
-          </table>
+          <div style="max-width: 95vw; overflow-x: auto;">
+            <table>
+              <tr>
+                <th>Company</th>
+                <th>Contact</th>
+                <th>Country</th>
+              </tr>
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+              </tr>
+              <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td>Mexico</td>
+              </tr>
+            </table>
+          </div>
 
           <p>
             If we want to add a caption, we could do it like this:
@@ -260,24 +273,26 @@ table:not(:has(caption))::after {
   &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 
-          <table style="width: 100%;">
-            <caption>Company Contacts</caption>
-            <tr>
-              <th>Company</th>
-              <th>Contact</th>
-              <th>Country</th>
-            </tr>
-            <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-            </tr>
-            <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-            </tr>
-          </table>
+          <div style="max-width: 95vw; overflow-x: auto;">
+            <table>
+              <caption>Company Contacts</caption>
+              <tr>
+                <th>Company</th>
+                <th>Contact</th>
+                <th>Country</th>
+              </tr>
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+              </tr>
+              <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td>Mexico</td>
+              </tr>
+            </table>
+          </div>
 
 
         </div>

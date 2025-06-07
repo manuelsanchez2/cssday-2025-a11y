@@ -10,7 +10,6 @@ body {
 	font-family: var(--font-family);
 	font-size: 1.125rem;
 	line-height: 1.5;
-	padding: 0 1rem;
 }
 
 main,
@@ -20,6 +19,7 @@ header {
 	width: min(100%, 1024px);
 	max-width: 100%;
 	margin-inline: auto;
+	padding-inline: 1rem;
 }
 
 main h2 {
@@ -91,6 +91,10 @@ ol {
 	justify-content: center;
 }
 
+.items-center {
+	align-items: center;
+}
+
 .btn {
 	display: flex;
 	align-items: center;
@@ -102,6 +106,11 @@ ol {
 	color: var(--color-dark);
 	cursor: pointer;
 	text-decoration: none;
+	width: fit-content;
+}
+
+.btn::after {
+	display: none;
 }
 
 .btn:hover {
@@ -149,9 +158,26 @@ hgroup h2.alternative {
 	background-color: var(--color-accent-light-alternative);
 }
 
-a:hover {
-	opacity: 0.8;
+a {
+	text-decoration: none;
+	position: relative;
+	color: var(--color-dark);
 }
+
+a::after {
+	content: "";
+	position: absolute;
+	bottom: 2%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: var(--color-dark);
+	transition: width 0.3s ease-in-out;
+}
+
+a:hover::after {
+	width: 0;
+}	
 
 *:focus-visible {
 	outline: 2px solid blue;
